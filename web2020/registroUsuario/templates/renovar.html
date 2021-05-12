@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block estilos %}
+  <link rel="stylesheet" href="/static/css/estilos.css">
+{% endblock %}
+
+{% block encabezado %}
+<section class="jumbotron">
+    <h3>Cambio de Llaves Publicas y Privadas</h3>
+</section>
+{% endblock %}
+
+{% block barra %}
+<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link opcion inicio" href="{% url 'logout' %}">Cerrar Sesión</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link opcion" href="{% url 'usuarioInicio' %}">Inicio</a>
+        </li>
+
+  </ul>
+</nav>
+{% endblock %}
+{% block contenido %}
+{% if errores %}
+  {% for error in errores %}
+    <div id="error" class="alert alert-danger">
+      <strong>{{error}}</strong>
+    </div>
+  {% endfor %}
+{% endif %}
+{% if cambio %}
+  {% for exito in cambio %}
+    <div id="error" class="alert alert-success">
+      <strong>{{exito}}</strong>
+    </div>
+  {% endfor %}
+{% endif %}
+<section class="container">
+    <form id="formularioArchivo" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-sm-7">
+              <label for="pwd">Contraseña:</label>
+              <input class="form-control" type="password" id="pwd" placeholder="Enter password" name="password" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button id="boton" type="submit" class="btn btn-outline-dark">Cambiar LLaves</button>
+            </div>
+          </div>
+    </form>
+</section>
+
+{% endblock %}

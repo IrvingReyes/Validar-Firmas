@@ -1,0 +1,22 @@
+body{
+    background-color: light-grey;
+}
+
+
+.opcion {
+    font-family: Sans-serif;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.inicio {
+    text-transform: uppercase;
+}
+
+
+.jumbotron {
+    background-color: #1D4AA6 ;
+    font-size: x-large;
+    color:#fff;
+    text-align:center;
+}

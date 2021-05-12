@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block titulo %}Inicio{% endblock %}
+
+{% block estilos %}
+ <link rel="stylesheet" href="/static/css/estilos.css">
+{% endblock %}
+
+{% block encabezado %}
+    <h3 class="jumbotron">¡Bienvenido a la plataforma de verificacion de Firmas Digitales!</h3>
+{% endblock %}
+
+
+{% block barra %}
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link opcion" href="{% url 'login' %}">Login</a>
+        </li>
+        <li></li>
+        <li class="nav-item">
+            <a class="nav-link opcion" href="{% url 'registro' %}">Registro</a>
+        </li>
+  </ul>
+</nav>
+{% endblock %}
+
+
+{% block contenido %}
+<section class="container">
+    <article class="col">
+        <p class="text-justify">Una firma digital es un mecanismo criptográfico que permite al receptor de un mensaje firmado digitalmente identificar a la entidad originadora de dicho mensaje (autenticación de origen y no repudio),
+         y confirmar que el mensaje no ha sido alterado desde que fue firmado por el originador (integridad).</p>
+    </article>
+</section>
+
+<!-- hola si encontraste esto eres un crack que no le hace al crack-->
+{% endblock %}
